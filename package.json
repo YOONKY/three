@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "dat.gui": "^0.7.9",
+    "dot.": "^1.0.0-alpha",
+    "parcel-bundler": "^1.12.5",
+    "three": "^0.151.3"
+  }
+}
