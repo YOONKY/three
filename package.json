@@ -3,6 +3,13 @@
     "dat.gui": "^0.7.9",
     "dot.": "^1.0.0-alpha",
     "parcel-bundler": "^1.12.5",
-    "three": "^0.151.3"
-  }
+    "three": "^0.151.3",
+    "three.js": "^0.77.1"
+  },
+  "name": "three",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/YOONKY/three.git",
+  "author": "YOONKY <lov012726@gmail.com>",
+  "license": "MIT"
 }
