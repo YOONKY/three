@@ -1,7 +1,5 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import * as dat from 'dat.gui'
-import { BoxGeometry } from 'three.js';
 
 
 
@@ -24,12 +22,17 @@ const camera = new THREE.PerspectiveCamera(
     1000
     ); 
 
-camera.position.set(0, 5, 5);
+camera.position.set(20, 20, 20);
+// const cameraHelper = new THREE.CameraHelper(camera)
+// scene.add(cameraHelper)
 
 
 // controller that can control the orbit by mouse event
 const orbit = new OrbitControls(camera, renderer.domElement);  
-orbit.update()  
+orbit.maxPolarAngle = 0.3 * Math.PI
+orbit.enabled = false;
+// orbit.update()  
+
 
 
 
@@ -55,13 +58,15 @@ const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
 scene.add(cube);  // 씬에 추가
 const speed = 0.1
 
+cube.rotation.z = (0.25 * Math.PI)
+
 
 
 
 const mouse = new THREE.Vector2();
 const raycaster = new THREE.Raycaster();
 
-
+let currentAnimationId = null;
 
 
 document.addEventListener('click', onClick);
@@ -76,6 +81,11 @@ function onClick(event) {
   
   if( intersects.length > 0 ){
     const targetPoint = intersects[0].point;
+
+    if(currentAnimationId) {
+      cancelAnimationFrame(currentAnimationId)
+    }
+
     moveCubeTo(targetPoint, speed)
   }
 }
@@ -88,21 +98,22 @@ function moveCubeTo(targetPoint, speed) {
   
   function moveCube() {
     cube.position.add(velocity);
-
+    camera.position.add(velocity);
+    
     if (cube.position.distanceTo(targetPoint) < 0.1) {
       cube.position.copy(targetPoint);
     } else {
-      requestAnimationFrame(moveCube);
+      currentAnimationId = requestAnimationFrame(moveCube);
     }
+
   }
 
   moveCube();
+  currentAnimationId = null;
 }
 
 function animate() {
-  
   requestAnimationFrame(animate);
-  
   renderer.render(scene, camera);
 }
 animate();
