@@ -56,17 +56,16 @@ import W from '../../../asset/Warpen.json'
 
     //FONT LOADER
     const loader = new FontLoader();
-// console.log("outof",WP)
-    loader.loadAsync('../../../asset/Warpen.json').then(
+
+    loader.loadAsync('../../../asset/JournalDingbats.json').then(
         (font)=> {
-            console.log("run  load", font)
-            const geometry = new TextGeometry( `Hi. \nnice to meet you!`, {
+
+            const geometry = new TextGeometry( `123456`, {
                 font: font,
                 size: 6,
                 height: 2,
             })
     
-            console.log("geometry?",geometry)
             const textMesh = new THREE.Mesh(geometry, [
                 new THREE.MeshPhongMaterial({color : 'red'}), // front + backs
                 new THREE.MeshPhongMaterial({color : 'pink'}) // side
