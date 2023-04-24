@@ -4,6 +4,7 @@
     "dat.gui": "^0.7.9",
     "dot.": "^1.0.0-alpha",
     "parcel-bundler": "^1.12.5",
+    "parcel-plugin-static-files-copy": "^2.6.0",
     "three": "^0.151.3",
     "three.js": "^0.77.1",
     "typescript": "^5.0.4"
@@ -13,5 +14,13 @@
   "main": "index.js",
   "repository": "https://github.com/YOONKY/three.git",
   "author": "YOONKY <lov012726@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "asset",
+        "staticOutDir": "asset"
+      }
+    ]
+  }
 }
