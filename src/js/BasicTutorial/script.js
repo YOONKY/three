@@ -1,4 +1,4 @@
-// ref : https://youtu.be/xJAfLdUgdc4 
+
 
 
 import * as THREE from 'three';

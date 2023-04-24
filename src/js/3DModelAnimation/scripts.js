@@ -35,7 +35,7 @@ const control = new OrbitControls(camera, renderer.domElement)
 const texture = new THREE.TextureLoader().load(wood) 
 const assetLoader = new GLTFLoader()
 
-let mixer;
+let mixer; // animation
 assetLoader.load(CesiumMan, (gltf)=>{
     const model = gltf.scene;
     mixer = new THREE.AnimationMixer(gltf.scene)

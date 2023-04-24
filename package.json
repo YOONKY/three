@@ -1,10 +1,12 @@
 {
   "dependencies": {
+    "@types/three": "^0.150.2",
     "dat.gui": "^0.7.9",
     "dot.": "^1.0.0-alpha",
     "parcel-bundler": "^1.12.5",
     "three": "^0.151.3",
-    "three.js": "^0.77.1"
+    "three.js": "^0.77.1",
+    "typescript": "^5.0.4"
   },
   "name": "three",
   "version": "1.0.0",
