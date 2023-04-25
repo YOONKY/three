@@ -1,6 +1,6 @@
 ref : https://youtu.be/a0qSHBnqORU
 # Raycaster
-3D공간에 있는 물체를 마우스로 컨트롤 하기 위한 클래스.
+3D공간에 있는 물체를 마우스로 컨트롤 하기 위한 클래스입니다.
 
 ### code example
 ```
@@ -44,4 +44,30 @@ window.requestAnimationFrame(render);
 ```
 
 ## createMesh() vs 전역 생성
-전역으로 생성된 cone과 createMesh함수로 생성된 큐브, 스피어 등은 차이없이 결과를 보여줌.
+전역으로 생성된 cone과 createMesh함수로 생성된 큐브, 스피어 등은 차이없이 결과를 보여줍니다.
+
+## object assign
+
+```
+let mesh = {
+  first : 1,
+  second : 2,
+  third : 3
+}
+
+let drag = mesh
+drag.second = 'not 2!'
+
+```
+
+이때 변경시킨 결과는 mesh에도 반영됩니다.
+
+```
+// mesh : 
+{ first: 1, second: 'not 2!', third: 3 }
+
+// drag : 
+{ first: 1, second: 'not 2!', third: 3 }
+```
+
+해당 특성은 array assign에서도 발생합니다.
