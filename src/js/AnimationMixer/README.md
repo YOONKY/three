@@ -1,5 +1,7 @@
 ref : https://youtu.be/C3s0UHpwlf8
 
+![AMixer](https://user-images.githubusercontent.com/93643832/234531047-bbe128df-0db7-4aae-8fcf-0bb207aa63aa.gif)
+
 # AnimationMixer
 특정 오브젝트가 가진 애니메이션을 위한 플레이어. 각각의 오브젝트마다 각각의 애니메이션 믹서가 있어야 합니다.
 
@@ -66,3 +68,7 @@ const controlModelByMouse = ( delta ) => {
 해당 코드는 캐릭터가 타겟포인트에 도착할때까지 걷는 모션을 취하고, 타겟포인트에 도착하면 걷는 모션을 중지하고 멈춰서도록 하는 코드입니다.
 currentAction은 현재 적용중인 애니메이션이며, play는 상황에 따라 취해야 하는 애니메이션입니다. currentAction과 play가 다른 경우 fade효과로 자연스럽게 애니메이션을 변경합니다.
 
+
+
+사족) 애니메이션 적용이 잘못 되었을 경우... 이런 모습을 볼 수 있습니다.
+![error](https://user-images.githubusercontent.com/93643832/234530418-f3b958f6-32da-4352-b998-939025abf74b.gif)
